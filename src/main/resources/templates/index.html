@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" , xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="#" th:action="@{/greeting}" th:object="${index}",th method="post">
+    <div class="form-group blu-margin">
+        <select class="form-control" id="addUser1"  th:field="*{idFrom}">
+            <option value="0">Выберите Валюту</option>
+            <option th:each="person1 : ${list}" th:value="${person1.numCode}" th:text="${person1.name}"></option>
+        </select>
+        <p>Кол-во: <input type="text" th:field="*{value}" /></p>
+        <select class="form-control" id="addUser2"  th:field="*{idTo}">
+            <option value="0">Выберите Валюту</option>
+            <option th:each="person2 : ${list}" th:value="${person2.numCode}" th:text="${person2.name}"></option>
+        </select>
+        <p>Кол-во: <input type="text"  /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </div>
+</form>
+
+
+</body>
+</html>
