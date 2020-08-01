@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="#" th:action="@{/greeting}" th:object="${index}",th method="post">
+<form action="#" th:action="@{/}" th:object="${index}",th method="post">
     <div class="form-group blu-margin">
         <select class="form-control" id="addUser1"  th:field="*{idFrom}">
             <option value="0">Выберите Валюту</option>
@@ -17,11 +17,28 @@
             <option value="0">Выберите Валюту</option>
             <option th:each="person2 : ${list}" th:value="${person2.numCode}" th:text="${person2.name}"></option>
         </select>
-        <p>Кол-во: <input type="text"  /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" value="Конвертировать" /> </p>
     </div>
 </form>
-
-
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Выйти из аакаунта"/>
+</form>
+<h2>ИСТОРИЯ ЗАПРОСОВ</h2>
+<table border="1">
+    <tr>
+        <th>Начальная валюта</th>
+        <th>получаемая валюта</th>
+        <th>исходная сумма</th>
+        <th>результат</th>
+        <th>дата запроса</th>
+    </tr>
+    <tr th:each = "valute: ${history}">
+        <td th:text="${valute.nameFrom}"></td>
+        <td th:text="${valute.nameTo}"></td>
+        <td th:text="${valute.valueFrom}"></td>
+        <td th:text="${valute.valueTo}"></td>
+        <td th:text="${valute.date}"></td>
+    </tr>
+</table>
 </body>
 </html>

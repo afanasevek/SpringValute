@@ -1,15 +1,15 @@
 package main.model;
 
 public class SearchObject {
-    private int value;
+    private String value;
     private int idFrom;
     private int idTo;
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
