@@ -1,4 +1,4 @@
-package main.model;
+package main.model.support;
 
 public class SearchObject {
     private String value;

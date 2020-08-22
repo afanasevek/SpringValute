@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body
+        {
+        margin-top: 200px;
+        text-align: center;
+        }
+    .history_table
+        {
+        width: 300px;
+        border: 1px solid #000;
+        margin: auto;
+        }
+    </style>
 </head>
 <body>
 <form action="#" th:action="@{/}" th:object="${index}",th method="post">
@@ -24,7 +37,7 @@
     <input type="submit" value="Выйти из аакаунта"/>
 </form>
 <h2>ИСТОРИЯ ЗАПРОСОВ</h2>
-<table border="1">
+<table border="1", class="history_table">
     <tr>
         <th>Начальная валюта</th>
         <th>получаемая валюта</th>
